@@ -1,3 +1,9 @@
+import { QuickMenu } from "../../features/QuickMenu";
+
 export const Main = () => {
-  return <div>Main</div>;
+  return (
+    <div>
+      <QuickMenu />
+    </div>
+  );
 };
