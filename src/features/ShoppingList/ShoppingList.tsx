@@ -4,14 +4,22 @@ import { useDisclosure } from "@mantine/hooks";
 
 export const ShoppingList = () => {
   const [opened, { open, close }] = useDisclosure(false);
+
   const form = useForm({
     mode: "uncontrolled",
     initialValues: {
       item: "",
     },
   });
+
   return (
     <>
+      <div onClick={(e) => e.stopPropagation()}>
+        <Button onClick={open} w={"100%"}>
+          Shopping list
+        </Button>
+      </div>
+
       <Modal
         opened={opened}
         onClose={close}
@@ -31,10 +39,6 @@ export const ShoppingList = () => {
           </Group>
         </form>
       </Modal>
-
-      <Button onClick={open} w={"100%"}>
-        Shopping list
-      </Button>
     </>
   );
 };

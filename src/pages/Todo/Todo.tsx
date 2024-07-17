@@ -3,7 +3,7 @@ import { AddTodo } from "../../features";
 
 export const Todo = () => {
   return (
-    <Flex w={320} h="100%" bg="orange" p={10}>
+    <Flex w={"100%"} h="100%" bg="orange" p={10}>
       <AddTodo />
     </Flex>
   );

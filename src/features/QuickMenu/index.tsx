@@ -1,1 +1,0 @@
-export { QuickMenu } from "./QuickMenu";
