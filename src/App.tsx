@@ -2,12 +2,15 @@
 // import viteLogo from "/vite.svg";
 import { Flex } from "@mantine/core";
 import "./App.css";
-import { Main } from "./pages";
+import { Main, Settings, Shopping, Todo } from "./pages";
 
 function App() {
   return (
-    <Flex p={10} bg="blue" w={320} h={"100vh"}>
+    <Flex p={10} h={"100vh"}>
       <Main />
+      <Todo />
+      <Shopping />
+      <Settings />
     </Flex>
   );
 }

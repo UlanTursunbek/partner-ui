@@ -1,9 +1,10 @@
-import { QuickMenu } from "../../features/QuickMenu";
+import { Flex } from "@mantine/core";
+import { QuickMenu } from "../../features";
 
 export const Main = () => {
   return (
-    <div>
+    <Flex w={320} h="100%" bg="blue" justify={"center"}>
       <QuickMenu />
-    </div>
+    </Flex>
   );
 };
