@@ -1,5 +1,4 @@
 import { ActionIcon, Checkbox, Flex, List, Text } from "@mantine/core";
-import { useAppSelector } from "app/store/hooks";
 import { useState } from "react";
 import { SlTrash } from "react-icons/sl";
 
