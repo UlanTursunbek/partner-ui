@@ -1,10 +1,10 @@
 import { Flex } from "@mantine/core";
-import { ShoppingList } from "../../features/ShoppingList";
+import { AddShopping } from "../../features/AddShopping";
 
 export const Shopping = () => {
   return (
     <Flex w={"100%"} h="100%" bg="pink" p={10}>
-      <ShoppingList />
+      <AddShopping />
     </Flex>
   );
 };
