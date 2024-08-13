@@ -1,1 +1,0 @@
-export { AddShopping } from "./AddShopping";
