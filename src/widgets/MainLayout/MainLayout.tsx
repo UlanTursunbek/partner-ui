@@ -19,10 +19,8 @@ export const MainLayout = ({ children }: Props) => {
       padding={0}
       maxWidth="430px"
     >
-      <Grid gridTemplateRows="auto 52px 52px" height="100%">
+      <Grid gridTemplateRows="auto 52px" height="100%">
         <Flex flex="1 1 auto">{children}</Flex>
-
-        <QuickAction />
 
         <Navigation />
       </Grid>
