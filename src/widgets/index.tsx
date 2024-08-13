@@ -1,2 +1,2 @@
-export * from "./MainLayout";
-export * from "./Navigation";
+export { MainLayout } from "./MainLayout";
+export { Navigation } from "./Navigation";

@@ -1,5 +1,8 @@
-import { Flex } from "@mantine/core";
 import { ReactNode } from "react";
+import { QuickAction } from "components";
+
+import { Container, Flex, Grid } from "@chakra-ui/react";
+
 import { Navigation } from "../Navigation";
 
 type Props = {
@@ -8,17 +11,21 @@ type Props = {
 
 export const MainLayout = ({ children }: Props) => {
   return (
-    <Flex
-      bg={"grey"}
-      h={"100vh"}
-      w={"100%"}
-      align={"center"}
-      direction={"column"}
+    <Container
+      justifyContent="center"
+      alignItems="center"
+      flexDirection="column"
+      height="100dvh"
+      padding={0}
+      maxWidth="430px"
     >
-      <Flex w={430} h={"100%"} direction={"column"}>
-        <Flex h={"100%"}>{children}</Flex>
+      <Grid gridTemplateRows="auto 52px 52px" height="100%">
+        <Flex flex="1 1 auto">{children}</Flex>
+
+        <QuickAction />
+
         <Navigation />
-      </Flex>
-    </Flex>
+      </Grid>
+    </Container>
   );
 };

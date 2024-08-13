@@ -1,4 +1,3 @@
-export * from "./Main";
-export * from "./Todo";
-export * from "./Shopping";
-export * from "./Settings";
+export { Main } from "./Main";
+export { Lists } from "./Lists";
+export { Settings } from "./Settings";

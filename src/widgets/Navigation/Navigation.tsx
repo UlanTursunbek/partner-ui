@@ -1,20 +1,24 @@
-import { Group } from "@mantine/core";
+import { URLs } from "app/router";
 import { Link } from "react-router-dom";
 
+import { Box, HStack } from "@chakra-ui/react";
+
 export const Navigation = () => {
+  const links = [URLs.root, URLs.lists, URLs.settings];
+
   return (
-    <Group
-      bg={"red"}
-      w={"100%"}
-      justify="space-evenly"
-      p={5}
-      py={10}
-      wrap="nowrap"
+    <HStack
+      gap="16px"
+      justifyContent="space-around"
+      bgColor="pink"
+      height="52px"
+      borderTopRadius="16px"
     >
-      <Link to={"/"}>Main</Link>
-      <Link to={"/todo"}>todo</Link>
-      <Link to={"/shopping"}>shopping</Link>
-      <Link to={"/settings"}>Settings</Link>
-    </Group>
+      {links.map((it) => (
+        <Link key={it} to={it}>
+          <Box>{it}</Box>
+        </Link>
+      ))}
+    </HStack>
   );
 };

@@ -1,9 +1,5 @@
-import { Flex } from "@mantine/core";
+import { MainLayout } from "widgets";
 
 export const Settings = () => {
-  return (
-    <Flex w={"100%"} h="100%" bg="green" justify={"center"}>
-      Settings here
-    </Flex>
-  );
+  return <MainLayout>Settings here</MainLayout>;
 };

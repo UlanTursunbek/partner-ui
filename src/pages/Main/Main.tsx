@@ -1,11 +1,5 @@
-import { Flex } from "@mantine/core";
-import { ShoppingList } from "features";
+import { MainLayout } from "widgets";
 
 export const Main = () => {
-  return (
-    <Flex w={"100%"} h="100%" bg="blue" direction={"column"}>
-      Main
-      <ShoppingList />
-    </Flex>
-  );
+  return <MainLayout>Main</MainLayout>;
 };
