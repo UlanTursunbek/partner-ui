@@ -1,19 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import { MantineProvider } from "@mantine/core";
-import "@mantine/core/styles.css";
 import { RouterProvider } from "react-router-dom";
+
+import { ChakraProvider } from "@chakra-ui/react";
+
 import { router } from "./router";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
+
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <MantineProvider>
-        <RouterProvider router={router} />
-      </MantineProvider>
-    </Provider>
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
   </React.StrictMode>
 );
