@@ -31,6 +31,7 @@ module.exports = {
     "newline-before-return": "error",
     "react/no-unescaped-entities": ["error", { forbid: [">", "}"] }],
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-floating-promises": ["warn"],
     "@typescript-eslint/no-unused-vars": "warn",
     "react/jsx-curly-brace-presence": [

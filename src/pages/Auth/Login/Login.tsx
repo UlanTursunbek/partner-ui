@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { auth } from "app/firebase";
 import { URLs } from "app/router";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -22,9 +23,15 @@ type Fields = {
   email: string;
   password: string;
 };
+
 export const Login = () => {
-  const { register, handleSubmit } = useForm<Fields>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Fields>();
   const navigation = useNavigate();
+  const toast = useToast();
 
   const [signInWithEmailAndPassword, _, loading, error] =
     useSignInWithEmailAndPassword(auth);
@@ -35,20 +42,25 @@ export const Login = () => {
     });
   };
 
-  const toast = useToast();
-
-  if (error) {
-    toast({
-      title: error.name,
-      description: error.message,
-      status: "error",
-      duration: 5000,
-      isClosable: true,
-    });
-  }
+  useEffect(() => {
+    if (error) {
+      toast({
+        title: "Registration Error",
+        description: error.message, // Error message from Firebase
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+  }, [error, toast]);
 
   return (
-    <Flex minH="100vh" align="center" justify="center">
+    <Flex
+      minH="100vh"
+      align="center"
+      justify="center"
+      bg={useColorModeValue("gray.50", "gray.800")}
+    >
       <Stack spacing={8} mx="auto" maxW="lg" py={12} px={6}>
         <Heading fontSize="3xl">Sign in to your account</Heading>
 
@@ -61,7 +73,7 @@ export const Login = () => {
           <Stack spacing={4} as="form" onSubmit={handleSubmit(onSubmit)}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" {...register("email")} />
+              <Input type="email" {...register("email", { required: true })} />
             </FormControl>
 
             <FormControl id="password">
